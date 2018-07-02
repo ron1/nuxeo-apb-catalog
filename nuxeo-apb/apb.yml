@@ -368,24 +368,61 @@ plans:
         type: string
         title: If set, an existing secret with this name is used for the admin user
         display_group: Nuxeo Security Config
-      - name: secure_route_tls_termination_type
+        
+      - name: ingress_tls_terminationType
         title: TLS termination type
         type: enum
         default: "edge"
         enum: ['edge', 'passthrough', 're-encryption']
         display_group: Nuxeo Security Config
-      - name: secure_route_tls_key
-        title: TLS key used for secured route
+      - name: ingress_tls_key
+        title: TLS key used for ingress/route
         type: string
         display_type: textarea
         display_group: Nuxeo Security Config
-      - name: secure_route_tls_certificate
-        title: TLS certificate for secured route
+      - name: ingress_tls_certificate
+        title: TLS certificate for ingress/route
         type: string
         display_type: textarea
         display_group: Nuxeo Security Config
-      - name: secure_route_tls_cacertificate
-        title: TLS CA Certificate for secured route
+      - name: ingress_tls_cacertificate
+        title: TLS CA Certificate for ingress/route
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+      - name: ingress_existingTlsSecret
+        title: If set, an existing secret with this name is used for ingress TLS termination
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+
+      - name: egress_tls_keystore
+        title: TLS keystore used for egress
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+      - name: egress_tls_keystorePassword
+        title: TLS keystore password used for egress
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+      - name: egress_tls_keystoreAlias
+        title: TLS keystore alias used for egress
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+      - name: egress_tls_truststore
+        title: TLS truststore used for egress
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+      - name: egress_tls_truststorePassword
+        title: TLS truststore password used for egress
+        type: string
+        display_type: textarea
+        display_group: Nuxeo Security Config
+      - name: egress_existingTlsSecret
+        title: If set, an existing secret with this name is used for egress TLS origination
         type: string
         display_type: textarea
         display_group: Nuxeo Security Config
